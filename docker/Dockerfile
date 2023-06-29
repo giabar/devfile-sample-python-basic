@@ -16,7 +16,7 @@ RUN \
     then pip install -r requirements.txt; \
   elif [ `ls -1q *.txt | wc -l` == 1 ]; \
     then pip install -r *.txt; \
-  fi &&\
+  fi
 USER root
 RUN microdnf update && microdnf install sudo iputils hostname findutils less nano && microdnf clean all
 
