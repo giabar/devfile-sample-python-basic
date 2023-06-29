@@ -18,7 +18,7 @@ RUN \
     then pip install -r *.txt; \
   fi
 USER root
-RUN microdnf update && microdnf install sudo iputils hostname findutils less nano && microdnf clean all
+RUN dnf update && dnf install -y sudo iputils && microdnf clean all
 
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
