@@ -18,7 +18,7 @@ RUN \
     then pip install -r *.txt; \
   fi
 USER root
-RUN dnf update && dnf install -y sudo iputils && microdnf clean all
+RUN dnf install -y sudo iputils && dnf clean all
 
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
